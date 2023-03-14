@@ -1,5 +1,8 @@
 #Q7
 #55 min
+#time complexity: O(n)
+#space complexity: 0(n)
+#method used: Hash the elements
 def KAnagrams(string, second, k):
     
     #if the length of the strings do not match, return false
