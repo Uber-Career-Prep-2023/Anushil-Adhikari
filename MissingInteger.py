@@ -1,5 +1,8 @@
 #Q6
 #5 minutes
+#time complexity: O(n)
+#space complexity: 0(n)
+#method used: Sorting algorithm variation
 
 #why do we need the num input
 def MissingInteger(lst, num):
