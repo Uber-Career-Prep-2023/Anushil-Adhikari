@@ -1,5 +1,7 @@
 #Fixed-size sliding window
 #35 min
+#time complexity: O(n)
+#space complexity: 0(n)
 def MaxMeanSubArray(lst,size):
     mean = 0
     
