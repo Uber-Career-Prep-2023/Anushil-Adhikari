@@ -5,7 +5,7 @@ Return the number of islands (contiguous 1s surrounded by 0s or the edge of the 
 
 type: graph problem
 time complex: O(n*m)
-space complex: O(n*m)
+space complex: O(1)
 approach: I used dfs recursion method to solve this problem
 time spent: 35 minutes
 """
