@@ -4,7 +4,7 @@ Given a binary matrix in which 1s represent land and 0s represent water.
 Return the number of islands (contiguous 1s surrounded by 0s or the edge of the matrix).
 
 type: graph problem
-time complex: O(n*m)
+time complex: O(n)
 space complex: O(1)
 approach: I used dfs recursion method to solve this problem
 time spent: 35 minutes
