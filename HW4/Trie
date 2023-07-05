@@ -1,0 +1,77 @@
+class TrieNode:
+    def __init__(self, letter):
+        self.letter = letter
+        self.children = {}
+        self.isEnd = False
+
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode("*")
+
+    def insert(self, word):
+        current = self.root
+
+        for letter in word:
+            if letter not in current.children:
+                current.children[letter] = TrieNode(letter)
+            current = current.children[letter]
+        current.isEnd = True
+
+    def isValidWord(self, word):
+
+        if word == "":
+            return True
+
+        current = self.root
+
+        for letter in word:
+            if letter not in current.children:
+                return False
+            current = current.children[letter]
+
+        return current.isEnd
+
+    def remove(self, word):
+        q = [self.root]
+        current = self.root
+
+        for letter in word:
+            if letter in current.children:
+                current = current.children[letter]
+                q.append(current)
+            else:
+                return None
+
+        if not current.isEnd:
+            return None
+
+        current.isEnd = False
+
+        while len(q) > 1:
+
+            last = q.pop()
+            if not last.isEnd and len(last.children) == 0:
+                parent = q[-1]
+                del parent.children[word[len(q)-1]]
+            else:
+                break
+
+
+trie = Trie()
+temp = ["cat", "catty", "bob", "bobby"]
+
+for i in temp:
+    trie.insert(i)
+
+print(trie.isValidWord("cat"))  # t
+print(trie.isValidWord("catty"))  # t
+print(trie.isValidWord("bob"))  # t
+print(trie.isValidWord("bobby"))  # t
+print(trie.isValidWord("rat"))  # f
+print(trie.isValidWord("catt"))  # f
+print(trie.isValidWord("bobb"))  # f
+trie.remove("bob")
+print('here')
+print(trie.isValidWord("bob"))  # t
+print(trie.isValidWord("bobby"))  # t
