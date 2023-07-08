@@ -29,8 +29,6 @@ Finally, I return how many ways we can add up to the sum.
 def CoinChange(arr, sum):
     temp = [0] * (sum+1)
     temp[0] = 1
-    #print(temp)
-    c = 0
 
     for coin in arr:
         for u in range(coin, len(temp)):
